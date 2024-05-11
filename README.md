@@ -29,7 +29,7 @@ To install and utilize Smartgrow, the user must fulfill the following software r
 
 1. Open Docker Desktop (only for Windows 11) and confirm that the Docker engine is operating. The user can confirm this by looking in the bottom left corner of the Docker Desktop window for a green indication with the phrase "Engine running," as illustrated in Figure 1.
 
-   ![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.001.png)
+   ![](images/Figure-1.png)
 
    **Figure 1.** Docker Desktop
 
@@ -94,13 +94,13 @@ To save changes and exit the text editor, the user should press the **Ctrl + X**
 
 To confirm the successful deployment, the user can open a web browser and enter the ***URL: localhost:3000***. The phrase "*Hello World!*" should be shown (see to Figure 5).
 
-![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.002.png)
+![](images/Figure-2.png)
 
 **Figure 2.** docker-compose up
 
 ![Texto
 
-Descripción generada automáticamente con confianza media](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.003.png)
+Descripción generada automáticamente con confianza media](images/Figure-3.png)
 
 **Figure 3.**docker ps -a
 
