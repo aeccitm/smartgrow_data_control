@@ -1,0 +1,10 @@
+.cultivo-section {
+  width: 100%;
+  height: calc(100vh - 68px - 240px);
+}
+
+@media (min-width: 1024px) {
+  .cultivo-section {
+    height: calc(100vh - 48px);
+  }
+}
