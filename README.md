@@ -106,7 +106,7 @@ To confirm the successful deployment, the user can open a web browser and enter 
 
 **Figure 4.**container running docker
 
-![](images/Figure-5.png
+![](images/Figure-5.png)
 
 **Figure 5.** Hello word web 
 
@@ -137,9 +137,7 @@ To confirm the successful deployment, the user can open a web browser and enter 
 
 1. To confirm the successful deployment, the user can simply open a web browser and enter the following ***URL: localhost:8080***. The application's homepage should be displayed.
 
-![Interfaz de usuario gráfica, Aplicación, Sitio web
-
-Descripción generada automáticamente](images/Figure-6.png)
+![](images/Figure-6.png)
 
 **Figure 6.** Homepage of SmartGrow DataControl peloyed in a web browser.
 
@@ -185,9 +183,7 @@ To observe current environmental factors, users need to visit the homepage of Sm
 **Figure 8.**  Weather tab selection by the user
 
 
-![Interfaz de usuario gráfica, Aplicación
-
-Descripción generada automáticamente](images/Figure-9)
+![](images/Figure-9)
 
 **Figure 9.** Hidro Tab selection by the user
 
