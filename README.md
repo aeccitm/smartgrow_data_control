@@ -98,21 +98,15 @@ To confirm the successful deployment, the user can open a web browser and enter 
 
 **Figure 2.** docker-compose up
 
-![Texto
-
-Descripción generada automáticamente con confianza media](images/Figure-3.png)
+![](images/Figure-3.png)
 
 **Figure 3.**docker ps -a
 
-![Texto
-
-Descripción generada automáticamente](images/Figure-4.png)
+![](images/Figure-4.png)
 
 **Figure 4.**container running docker
 
-![Interfaz de usuario gráfica, Aplicación
-
-Descripción generada automáticamente](images/Figure-5.png
+![](images/Figure-5.png
 
 **Figure 5.** Hello word web 
 
@@ -153,9 +147,7 @@ Descripción generada automáticamente](images/Figure-6.png)
 
 To execute the application on a Windows operating system, the user must initially launch Docker Desktop. Next, navigate to the left menu and choose the "Containers" option. Find the container named "appsmartgrow" and choose the "Start" option or click the play button located under the "Actions" section. This will start the application.
 
-![](images/Figure-7)![ref1]![ref1]![Captura de pantalla de un celular
-
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.009.png)
+![](images/Figure-7.png)
 
 **Figure 7.**Docker desktop images
 
@@ -188,7 +180,7 @@ Software operation
 
 To observe current environmental factors, users need to visit the homepage of Smartgrow DataControl. Users can browse between the Hidro and Weather tabs using the navigation menu. On larger displays, the menu is positioned at the top, while on smaller devices like mobile phones, it is located at the bottom. Within these areas, users will have access to up-to-date measurements of environmental parameters including temperature, humidity, carbon dioxide levels, photosynthetic photon flux (PPF), vapor pressure deficit (VPD), photosynthetic photon flux density (PPFD), water temperature, pH, electrical conductivity, and water level. Furthermore, users could see the precise date and time of the most recent data recorded as is shown in figures 8, 9, and 10.
 
-![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.010.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.011.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.012.png)![](images/Figure-8.png)
+![](images/Figure-8.png)
 
 **Figure 8.**  Weather tab selection by the user
 
@@ -199,32 +191,26 @@ Descripción generada automáticamente](images/Figure-9)
 
 **Figure 9.** Hidro Tab selection by the user
 
-![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.015.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.016.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.017.png)![](images/Figure-10.png)
+![](images/Figure-10.png)
 
 **Figure 10.** Responsive mobile version for CannaHidro table selection
 
 On the other hand, users can check the state of the system's actuators by viewing indicators positioned in the top-right corner for bigger screens and at the top for smaller screens. Users may visually determine the status of the actuators, whether they are in an activated or deactivated state. In addition, users could monitor the state of the system's connections as is illustrated in Figure 11.
 
-![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.019.png) ![Interfaz de usuario gráfica, Diagrama, Texto, Aplicación
-
-Descripción generada automáticamente con confianza media](images/Figure-11.png)
+![](images/Figure-11.png)
 
 **Figure 11.** Smartgrow DataControl allows to monitor the state of the system's connections as is highlighted in the top of this image.
 
 Users can access the "Actuators" tab from the navigation menu, which is positioned at the top for bigger screens and at the bottom for mobile screens, to interact with the system's actuators. Within this tab, users could observe the current state of the system's actuators, which are visually depicted as toggle buttons. Users could modify the operational status of the system's actuators by activating or deactivating them as is depicted in Figure 12.
 
-![Captura de pantalla de un celular con la imagen de una caricatura
-
-Descripción generada automáticamente con confianza media](images/Figure-12.png)
+![](images/Figure-12.png)
 
 **Figure 12.** Picture of the actuator tab in which the user can observe the current state of the system's actuators.
 
 
 To interact with the pH and conductivity control system, users can visit the "Control" tab from the navigation menu. On bigger screens, the menu is situated at the top, while on mobile screens, it is located at the bottom. Within this section, users have the ability to observe the present target values for pH and conductivity. Furthermore, users have the ability to customize them according to their preferences and transmit them to the control system as is illustrated in Figure 13.
 
-![Interfaz de usuario gráfica, Aplicación
-
-Descripción generada automáticamente](images/Figure-13.png)
+![](images/Figure-13.png)
 
 **Figure 13.** Picture of the Control tab in which the user can observe the present target values for pH and conductivity.
 
@@ -376,5 +362,5 @@ After opening the Windows Terminal application, users must setup Ubuntu. To acco
 
 
 
-
-[ref1]: images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.008.png
+<!-- 
+[ref1]: images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.008.png -->
