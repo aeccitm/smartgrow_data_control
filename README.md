@@ -100,9 +100,11 @@ To confirm the successful deployment, the user can open a web browser and enter 
 
 ![](images/Figure-3.png)
 
+
 **Figure 3.**docker ps -a
 
 ![](images/Figure-4.png)
+
 
 **Figure 4.**container running docker
 
@@ -183,7 +185,7 @@ To observe current environmental factors, users need to visit the homepage of Sm
 **Figure 8.**  Weather tab selection by the user
 
 
-![](images/Figure-9)
+![](images/Figure-9.png)
 
 **Figure 9.** Hidro Tab selection by the user
 
