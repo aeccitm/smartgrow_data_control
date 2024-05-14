@@ -3,7 +3,7 @@
 ## About Smartgrow
 ## SmartGrow DataControl is a highly automated program developed specifically for collecting and evaluating ambient physiological information in indoor crop cultivation. This solution enables effortless integration between wireless devices and open-source databases, prioritizing the optimization of energy consumption by utilizing standard communication protocols such as TCP/IP, MQTT, and HTTP. The main objective of SmartGrow DataControl is to enhance the collection of crucial data for in-depth research of crop physiology, utilizing cutting-edge optics and Internet of Things (IoT) technologies. This paper primarily functions as a user guide, providing precise instructions on how to efficiently utilize the program. The content encompasses subjects such as the process of installation, the necessary hardware and software prerequisites, and the functionality of the system.
 ## GitHub repository
-<https://github.com/santiagoSuarez219/smartgrow>
+<https://github.com/aeccitm/smartgrow_data_control.git>
 
 Installation Process  
 
@@ -37,7 +37,7 @@ To install and utilize Smartgrow, the user must fulfill the following software r
 
  
 
-- ***git clone git@github.com:santiagoSuarez219/smartgrow.git***
+- ***git clone https://github.com/aeccitm/smartgrow_data_control.git***
 
 Prior to executing the above command, it is crucial for the user to have Git installed and properly configured on their local computer or web server. If the user does not have Git installed, they can refer to the installation and configuration guide provided in Appendix C of this user guide.
 
@@ -106,13 +106,13 @@ Descripción generada automáticamente con confianza media](images/Figure-3.png)
 
 ![Texto
 
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.004.png)
+Descripción generada automáticamente](images/Figure-4.png)
 
 **Figure 4.**container running docker
 
 ![Interfaz de usuario gráfica, Aplicación
 
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.005.png)
+Descripción generada automáticamente](images/Figure-5.png
 
 **Figure 5.** Hello word web 
 
@@ -145,7 +145,7 @@ Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d
 
 ![Interfaz de usuario gráfica, Aplicación, Sitio web
 
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.006.png)
+Descripción generada automáticamente](images/Figure-6.png)
 
 **Figure 6.** Homepage of SmartGrow DataControl peloyed in a web browser.
 
@@ -153,7 +153,7 @@ Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d
 
 To execute the application on a Windows operating system, the user must initially launch Docker Desktop. Next, navigate to the left menu and choose the "Containers" option. Find the container named "appsmartgrow" and choose the "Start" option or click the play button located under the "Actions" section. This will start the application.
 
-![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.007.png)![ref1]![ref1]![Captura de pantalla de un celular
+![](images/Figure-7)![ref1]![ref1]![Captura de pantalla de un celular
 
 Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.009.png)
 
@@ -188,18 +188,18 @@ Software operation
 
 To observe current environmental factors, users need to visit the homepage of Smartgrow DataControl. Users can browse between the Hidro and Weather tabs using the navigation menu. On larger displays, the menu is positioned at the top, while on smaller devices like mobile phones, it is located at the bottom. Within these areas, users will have access to up-to-date measurements of environmental parameters including temperature, humidity, carbon dioxide levels, photosynthetic photon flux (PPF), vapor pressure deficit (VPD), photosynthetic photon flux density (PPFD), water temperature, pH, electrical conductivity, and water level. Furthermore, users could see the precise date and time of the most recent data recorded as is shown in figures 8, 9, and 10.
 
-![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.010.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.011.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.012.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.013.png)
+![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.010.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.011.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.012.png)![](images/Figure-8.png)
 
 **Figure 8.**  Weather tab selection by the user
 
 
 ![Interfaz de usuario gráfica, Aplicación
 
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.014.png)
+Descripción generada automáticamente](images/Figure-9)
 
 **Figure 9.** Hidro Tab selection by the user
 
-![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.015.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.016.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.017.png)![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.018.jpeg)
+![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.015.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.016.png)![](images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.017.png)![](images/Figure-10.png)
 
 **Figure 10.** Responsive mobile version for CannaHidro table selection
 
@@ -207,7 +207,7 @@ On the other hand, users can check the state of the system's actuators by viewin
 
 ![](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.019.png) ![Interfaz de usuario gráfica, Diagrama, Texto, Aplicación
 
-Descripción generada automáticamente con confianza media](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.020.png)
+Descripción generada automáticamente con confianza media](images/Figure-11.png)
 
 **Figure 11.** Smartgrow DataControl allows to monitor the state of the system's connections as is highlighted in the top of this image.
 
@@ -215,7 +215,7 @@ Users can access the "Actuators" tab from the navigation menu, which is position
 
 ![Captura de pantalla de un celular con la imagen de una caricatura
 
-Descripción generada automáticamente con confianza media](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.021.png)
+Descripción generada automáticamente con confianza media](images/Figure-12.png)
 
 **Figure 12.** Picture of the actuator tab in which the user can observe the current state of the system's actuators.
 
@@ -224,7 +224,7 @@ To interact with the pH and conductivity control system, users can visit the "Co
 
 ![Interfaz de usuario gráfica, Aplicación
 
-Descripción generada automáticamente](Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.022.png)
+Descripción generada automáticamente](images/Figure-13.png)
 
 **Figure 13.** Picture of the Control tab in which the user can observe the present target values for pH and conductivity.
 
@@ -377,4 +377,4 @@ After opening the Windows Terminal application, users must setup Ubuntu. To acco
 
 
 
-[ref1]: Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.008.png
+[ref1]: images/Aspose.Words.b81a03c4-a76f-4a05-81f2-a2d699f88a08.008.png
