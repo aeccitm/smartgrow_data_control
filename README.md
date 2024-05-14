@@ -101,12 +101,12 @@ To confirm the successful deployment, the user can open a web browser and enter 
 ![](images/Figure-3.png)
 
 
-**Figure 3.**docker ps -a
+**Figure 3.** docker ps -a
 
 ![](images/Figure-4.png)
 
 
-**Figure 4.**container running docker
+**Figure 4.** container running docker
 
 ![](images/Figure-5.png)
 
@@ -149,7 +149,7 @@ To execute the application on a Windows operating system, the user must initial
 
 ![](images/Figure-7.png)
 
-**Figure 7.**Docker desktop images
+**Figure 7.** Docker desktop images
 
 Alternatively, the software can be executed on both Windows and Ubuntu by running the following command in the terminal, which is placed in the root directory of the project:
 
