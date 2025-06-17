@@ -2,7 +2,9 @@
 #include "SparkFun_AS7265X.h"
 
 
+
 //hacer un constructor con todos los canales del sensor AS7265X
+
 
 AS7265xModule::AS7265xModule(const char* id)
 {   
@@ -26,6 +28,14 @@ AS7265xModule::AS7265xModule(const char* id)
     float W = 0.0f; //860nm
     float K = 0.0f; //900nm
     float L = 0.0f; //
+}
+
+
+// Nueva función para resetear el sensor
+void AS7265xModule::reset() {
+    sensor.softReset();  // Realiza el reset usando el método público
+    delay(100);  // Permite que el sensor se reinicie
+    Serial.println("Sensor AS7265X reseteado.");
 }
 
 void AS7265xModule::begin()
@@ -70,81 +80,61 @@ void AS7265xModule::setGain(const char* gain, const int integration){
     }
     //Integration cycles is from 0 (2.78ms) to 255 (711ms) in steps of 2.78ms
     sensor.setIntegrationCycles(integration); //Default 50*2.8ms = 140ms per reading
+    
+}
 
+
+float AS7265xModule::normalize(float rawValue, float gain, float integrationTime) {
+    return rawValue / (gain * integrationTime);
+}
+
+void AS7265xModule::Read(float gain, float integrationTime) {
+    sensor.takeMeasurements();
+
+    // Leer solo los 14 canales necesarios (A a U)
+    float rawValues[14] = {
+        static_cast<float>(sensor.getA()), static_cast<float>(sensor.getB()), static_cast<float>(sensor.getC()), static_cast<float>(sensor.getD()),
+        static_cast<float>(sensor.getE()), static_cast<float>(sensor.getF()), static_cast<float>(sensor.getG()), static_cast<float>(sensor.getH()),
+        static_cast<float>(sensor.getR()), static_cast<float>(sensor.getI()), static_cast<float>(sensor.getS()), static_cast<float>(sensor.getJ()),
+        static_cast<float>(sensor.getT()), static_cast<float>(sensor.getU())
+    };
+
+    // Normalización inicial (dividir por ganancia y tiempo de integración)
+    float normalizedValues[14];
+    for (int i = 0; i < 14; i++) {
+        normalizedValues[i] = rawValues[i];
+    }
+
+    // Asignar valores normalizados a los atributos de la clase
+    this->A = normalizedValues[0];
+    this->B = normalizedValues[1];
+    this->C = normalizedValues[2];
+    this->D = normalizedValues[3];
+    this->E = normalizedValues[4];
+    this->F = normalizedValues[5];
+    this->G = normalizedValues[6];
+    this->H = normalizedValues[7];
+    this->R = normalizedValues[8];
+    this->I = normalizedValues[9];
+    this->S = normalizedValues[10];
+    this->J = normalizedValues[11];
+    this->T = normalizedValues[12];
+    this->U = normalizedValues[13];
+
+    // Imprimir valores normalizados para depuración
+    Serial.println("Valores normalizados (Canales A a U):");
+    for (int i = 0; i < 14; i++) {
+        Serial.print("Canal ");
+        Serial.print(i + 1);
+        Serial.print(": ");
+        Serial.println(normalizedValues[i]);
+    }
 }
 
 
 
-void AS7265xModule::Read()
-{
-    
-
-    sensor.takeMeasurements();
-
-    this->A = sensor.getCalibratedA();
-    this->B = sensor.getCalibratedB();
-    this->C = sensor.getCalibratedC();
-    this->D = sensor.getCalibratedD();
-    this->E = sensor.getCalibratedE();
-    this->F = sensor.getCalibratedF();
-    this->G = sensor.getCalibratedG();
-    this->H = sensor.getCalibratedH();
-    this->R = sensor.getCalibratedR();
-    this->I = sensor.getCalibratedI();
-    this->S = sensor.getCalibratedS();
-    this->J = sensor.getCalibratedJ();
-    this->T = sensor.getCalibratedT();
-    this->U = sensor.getCalibratedU();
-    this->V = sensor.getCalibratedV();
-    this->W = sensor.getCalibratedW();
-    this->K = sensor.getCalibratedK();
-    this->L = sensor.getCalibratedL();
-
-    Serial.print("A: ");
-    Serial.println(this->A);
-    Serial.print("B: ");
-    Serial.println(this->B);
-    Serial.print("C: ");
-    Serial.println(this->C);
-    Serial.print("D: ");
-    Serial.println(this->D);
-    Serial.print("E: ");
-    Serial.println(this->E);
-    Serial.print("F: ");
-    Serial.println(this->F);
-    Serial.print("G: ");
-    Serial.println(this->G);
-    Serial.print("H: ");
-    Serial.println(this->H);
-    Serial.print("R: ");
-    Serial.println(this->R);
-    Serial.print("I: ");
-    Serial.println(this->I);
-    Serial.print("S: ");
-    Serial.println(this->S);
-    Serial.print("J: ");
-    Serial.println(this->J);
-    Serial.print("T: ");
-    Serial.println(this->T);
-    Serial.print("U: ");
-    Serial.println(this->U);
-    Serial.print("V: ");
-    Serial.println(this->V);
-    Serial.print("W: ");
-    Serial.println(this->W);
-    Serial.print("K: ");
-    Serial.println(this->K);
-    Serial.print("L: ");
-    Serial.println(this->L);
-    Serial.println("=====================================");
 
 
-
-
-
-
-
-}     
 
 const String AS7265xModule::buildJson()
 {
@@ -172,6 +162,10 @@ const String AS7265xModule::buildJson()
     serializeJson(jsonDocument, jsonString);
     return jsonString;
 }
+
+
+
+
 
 
 

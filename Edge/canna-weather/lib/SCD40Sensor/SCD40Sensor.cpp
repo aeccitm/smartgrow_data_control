@@ -9,10 +9,14 @@ void SCD40Sensor::read()
     float temperature = 0.0f;
     float humidity = 0.0f;
     mySensor.readMeasurement(co2, temperature, humidity);
-    this->temperatura = temperature;
-    this->humedad = humidity;
+    float humedad_filtrada = aplicarFiltro(humidity);
+    float humedad_calibrada = calibrarHumedad(humedad_filtrada);
+    float temperatura_filtrada = aplicarFiltroTemperatura(temperature);
+    float temperature_calibrada = calibrarTemperatura(temperatura_filtrada);
+    this->temperatura = temperature_calibrada;
+    this->humedad = humedad_calibrada;
     this->co2 = co2;
-    this->VPD = calcularVPD(temperature, humidity);
+    this->VPD = calcularVPD(temperatura, humedad);
     Serial.print("Temperatura: ");
     Serial.println(this->temperatura);
     Serial.print("Humedad: ");
@@ -21,6 +25,46 @@ void SCD40Sensor::read()
     Serial.println(this->co2);
     Serial.print("VPD: ");
     Serial.println(this->VPD);
+}
+
+// --- Calibración y filtros ---
+float SCD40Sensor::calibrarTemperatura(float t) {
+    float t_corr = TEMP_A * t + TEMP_B;
+    return t_corr;
+}
+
+float SCD40Sensor::aplicarFiltroTemperatura(float val) {
+    bufferTemp[idxTemp] = val;
+    idxTemp = (idxTemp + 1) % WINDOW_TEMP;
+    if (idxTemp == 0) fullTemp = true;
+
+    float suma = 0.0f;
+    int n = fullTemp ? WINDOW_TEMP : idxTemp;
+    for (int i = 0; i < n; i++) suma += bufferTemp[i];
+    return suma / n;
+}
+
+float SCD40Sensor::aplicarFiltro(float nuevaLectura)
+{
+    bufferHumedad[bufferIndex] = nuevaLectura;
+    bufferIndex = (bufferIndex + 1) % WINDOW_HUM;
+    if (bufferIndex == 0) fullHum = true;
+
+    float suma = 0.0f;
+    int n = fullHum ? WINDOW_HUM : bufferIndex;
+    for (int i = 0; i < n; i++) suma += bufferHumedad[i];
+
+    return suma / n;
+}
+
+
+float SCD40Sensor::calibrarHumedad(float rh)
+{
+
+    float rh_corr = RH_A * rh + RH_B;
+    if (rh_corr < 0.0f) rh_corr = 0.0f;
+    if (rh_corr > 100.0f) rh_corr = 100.0f;
+    return rh_corr;
 }
 
 const String SCD40Sensor::buildJson()
@@ -42,7 +86,7 @@ float SCD40Sensor::calcularVPD(float temperatura, float humedad)
     {
         return 0.0f;
     }
-    VPD = 0.611 * exp((17.27 * temperatura) / (temperatura + 237.3)) * (1-(humedad/100)); //Calculo de VPD  con la formula de Buck 1996 
+    VPD = 0.6108f * exp((17.27 * temperatura) / (temperatura + 237.3f)) * (1.0f-(humedad/100.0f)); //Calculo de VPD  con la formula de Buck 1996 
     
     return VPD;
 
@@ -57,6 +101,8 @@ void SCD40Sensor::begin(TwoWire &wire)
 {
     mySensor.begin(wire);
     mySensor.startPeriodicMeasurement();
+    for (int i = 0; i < WINDOW_HUM; i++) bufferHumedad[i] = 0.0f;
+    for (int i = 0; i < WINDOW_TEMP; i++) bufferTemp[i] = 0.0f;
 }
 
 void SCD40Sensor::setTemperatura(float temperatura)

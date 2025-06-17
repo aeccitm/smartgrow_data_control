@@ -7,14 +7,17 @@
 
 
 
+
 class AS7265xModule {
 public:
     AS7265xModule(const char* id);
     void begin();
-    void Read();
+    void Read(float gain, float integrationTime);
     void setGain(const char* gain, const int integration);
     const String buildJson();
+    float normalize(float rawValue, float gain, float integrationTime);
 
+    void reset();
     const char* id;
     float A;
     float B;
